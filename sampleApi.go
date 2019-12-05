@@ -40,11 +40,11 @@ func getDBConnection() (db *gorm.DB, err error) {
 
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/personList", getPersons).Methods("GET")
-	router.HandleFunc("/personList/{id}", getPerson).Methods("GET")
-	router.HandleFunc("/personList", createPerson).Methods("POST")
-	router.HandleFunc("/personList/{id}", updatePerson).Methods("PUT")
-	router.HandleFunc("/personList/{id}", deletePerson).Methods("DELETE")
+	router.HandleFunc("/users", getPersons).Methods("GET")
+	router.HandleFunc("/users/{id}", getPerson).Methods("GET")
+	router.HandleFunc("/users", createPerson).Methods("POST")
+	router.HandleFunc("/users/{id}", updatePerson).Methods("PUT")
+	router.HandleFunc("/users/{id}", deletePerson).Methods("DELETE")
 	http.ListenAndServe(":8082", router)
 }
 
